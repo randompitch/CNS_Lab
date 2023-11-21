@@ -9,7 +9,9 @@ import os
 
 q = queue.Queue(maxsize=10)
 
-filename =  'count.mp4'
+#filename =  'Final.mp4'
+#filename =  'count.mp4'
+filename =  'impressions_23.mp4'
 command = "ffmpeg -i {} -ab 160k -ac 2 -ar 44100 -vn {}".format(filename,'temp.wav')
 os.system(command)
 
@@ -17,7 +19,7 @@ BUFF_SIZE = 65536
 server_socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 server_socket.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,BUFF_SIZE)
 host_name = socket.gethostname()
-host_ip = '192.168.1.21' #  socket.gethostbyname(host_name)
+host_ip = socket.gethostbyname(host_name)
 print(host_ip)
 port = 9688
 socket_address = (host_ip,port)
