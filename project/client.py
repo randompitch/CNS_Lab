@@ -1,8 +1,8 @@
-import cv2, imutils, socket
+import cv2, socket
 import numpy as np
 import time, os
 import base64
-import threading, wave, pyaudio,pickle,struct
+import pyaudio,pickle,struct
 
 BUFF_SIZE = 65536
 

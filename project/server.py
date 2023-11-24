@@ -2,16 +2,15 @@ import cv2, imutils, socket
 import numpy as np
 import time
 import base64
-import threading, wave, pyaudio,pickle,struct
-import sys
+import wave, pyaudio,pickle,struct
 import queue
 import os
 
 q = queue.Queue(maxsize=10)
 
-#filename =  'Final.mp4'
+filename =  'Final.mp4'
 #filename =  'count.mp4'
-filename =  'impressions_23.mp4'
+#filename =  'impressions_23.mp4'
 command = "ffmpeg -i {} -ab 160k -ac 2 -ar 44100 -vn {}".format(filename,'temp.wav')
 os.system(command)
 
